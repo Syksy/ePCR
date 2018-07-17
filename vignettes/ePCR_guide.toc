@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Description of the \texttt {ePCR} package}{2}
+\contentsline {section}{\numberline {2}Loading the example clinical cohorts into the R session}{2}
+\contentsline {section}{\numberline {3}Fitting new ePCR S4-objects}{2}
+\contentsline {subsection}{\numberline {3.1}PSP-objects}{3}
+\contentsline {subsection}{\numberline {3.2}PEP-objects}{8}
+\contentsline {subsection}{\numberline {3.3}Predictions based on PEP/PSP-objects}{8}
+\contentsline {section}{\numberline {4}Using the provided DREAM and TYKS ePCR-models}{8}
+\contentsline {section}{\numberline {5}Appendices}{11}
+\contentsline {subsection}{\numberline {5.1}Appendix 1 - \textit {ePCR} functionality}{11}
+\contentsline {subsection}{\numberline {5.2}Appendix 2 - Comparison of the present \textit {ePCR}-package and original DREAM code}{12}
+\contentsline {subsection}{\numberline {5.3}Appendix 3 - Abbreviations and terminology}{14}
