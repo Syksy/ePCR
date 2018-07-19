@@ -13,7 +13,7 @@ Guinney J, Wang T, Laajala TD, et al. Prediction of overall survival for patient
 
 Laajala TD, Guinney J, Costello JC. Community mining of open clinical trial data. Oncotarget 2017; 8: 81721-81722. doi: 10.18632/oncotarget.20853.
 
-Laajala TD, Murtojärvi M, Virkki A, Aittokallio T. ePCR: an R-package for survival and time-to-event prediction in advanced prostate cancer, applied to a real-world patient cohort. Manuscript in preparation.
+Laajala TD, Murtojärvi M, Virkki A, Aittokallio T. ePCR: an R-package for survival and time-to-event prediction in advanced prostate cancer, applied to a real-world patient cohort. Bioinformatics. 2018 Jun 15. doi: 10.1093/bioinformatics/bty477.
 }
 \author{
 Teemu Daniel Laajala \email{teelaa@utu.fi}

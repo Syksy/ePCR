@@ -185,8 +185,18 @@ setMethod("initialize", "PSP",
 		# Optimal fit according to the chosen criterion
 		if(criterion %in% c("min", "min.mean")){
 			opt <- which(.Object@cvmean == max(.Object@cvmean), arr.ind=TRUE)
+			# Single optimum detected
 			if(dim(opt)[1]==1){
 				# Single unique optimum according to the criterion
+				alphaopt <- as.numeric(rownames(opt)[1])
+				lambdaopt <- opt[1,2] # The only optimum, second column is the lambda value
+			# Multiple optima
+			}else{
+				warning("Multiple optima detected in the CV grid; choosing the one with the highest alpha and then highest lambda, but manual inspection is highly encouraged")
+				# Favor high alpha, and then high lambda
+				opt <- opt[order(opt[,1], opt[,2]),]	
+				opt <- opt[nrow(opt),,drop=F]			
+				# Pick these this alpha/lambda optimum
 				alphaopt <- as.numeric(rownames(opt)[1])
 				lambdaopt <- opt[1,2] # The only optimum, second column is the lambda value
 			}
@@ -225,8 +235,9 @@ setMethod("initialize", "PSP",
 				}
 			}
 		}else{
-			warning("Illegal 'criterion' parameter, should be one of: min, lambda.1se, alpha.1se")
+			stop("Illegal 'criterion' parameter, should be one of: min, lambda.1se, alpha.1se")
 		}
+		# Fit the actual glmnet/coxnet object based on the obtained cross-validation results
 		.Object@fit = glmnet::glmnet(x = as.matrix(.Object@x.expand(x)), y = y, family = "cox", 
 			nlambda = nlambda, 
 			alpha = alphaopt)
