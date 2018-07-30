@@ -3,7 +3,7 @@ Type: Package
 Title: Ensemble Penalized Cox Regression for Survival Prediction
 Version: 0.9.9-8
 Date: 2018-07-30
-Author: Teemu Daniel Laajala <teelaa@utu.fi> [aut, cre], Mika Murtoj‰rvi <mianmu2@hotmail.com> [ctb]
+Author: Teemu Daniel Laajala <teelaa@utu.fi> [aut, cre], Mika Murtoj√§rvi <mianmu2@hotmail.com> [ctb]
 Maintainer: Teemu Daniel Laajala <teelaa@utu.fi>
 Depends: R (>= 3.0.0)
 Imports: grDevices, graphics, stats, utils, Matrix, MASS, glmnet, hamlet, survival, ROCR, timeROC, pracma, Bolstad2, impute, c060, methods
