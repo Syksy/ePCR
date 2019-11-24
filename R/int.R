@@ -595,6 +595,3 @@ cv.grid <- function(
 	# Return trimmed object
 	object
 }
-
-
-

@@ -21,12 +21,12 @@
 #' @author Teemu Daniel Laajala \email{teelaa@@utu.fi}
 #' @export
 meanrank = function(x){ # x is a list or matrix of risk scores per ensemble member (column = ensemble member)
-	if(class(x)=="list"){
+	if("list" %in% class(x)){
 		apply(do.call("cbind", lapply(x, FUN=rank)), MARGIN=1, FUN=mean)
-	}else if(class(x)=="matrix"){
+	}else if("matrix" %in% class(x)){
 		apply(apply(x, MARGIN=2, FUN=rank), MARGIN=1, FUN=mean)
 	}else{
-		stop(paste("Error in mean rank computation for x, invalid class:", class(x)))
+		stop(paste("Error in mean rank computation for x, invalid class:", paste(class(x), collapse=" ")))
 	}
 }
 
