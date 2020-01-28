@@ -1,3 +1,11 @@
+ePCR v0.9.9-12 (Release date: 2020-01-28)
+==============
+
+Changes:
+
+* Calling predict-function directly as exported from the glmnet-package
+
+
 ePCR v0.9.9-10/11 (Release date: 2019-11-23)
 ==============
 
