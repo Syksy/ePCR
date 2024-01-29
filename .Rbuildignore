@@ -1,3 +1,5 @@
 ^desktop.ini
-.git
+^.git
+^.gitignore
 ^.*\.tws
+^data-raw
