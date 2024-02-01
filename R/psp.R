@@ -19,6 +19,7 @@ setOldClass("impute")
 #'
 #' @name PSP-class
 #' @rdname PSP-class
+#' @import methods
 #' @importFrom impute impute.knn
 #' @slot description A general user-provided string describing the PSP
 #' @slot features A character vector indicating feature names
