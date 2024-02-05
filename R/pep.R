@@ -181,13 +181,19 @@ setMethod("predict", "PEP",
 			preds <- lapply(object@PSPs, FUN=function(z){
 				# Novel data prediction
 				#glmnet::predict.coxnet(z@fit, newx=as.matrix(x.expand(newx)), s=z@optimum["Lambda"])
-				glmnet::predict.glmnet(z@fit, newx=as.matrix(x.expand(newx)), s=z@optimum["Lambda"])
+				#glmnet::predict.glmnet(z@fit, newx=as.matrix(x.expand(newx)), s=z@optimum["Lambda"])
+				print("test1a")
+				predict(z@fit, newx=as.matrix(x.expand(newx)), s=z@optimum["Lambda"])
+				print("test1b")
 			})		
 		}else{
 			preds <- lapply(object@PSPs, FUN=function(z){
 				# Demonstrate using the data matrix in stored in ePCR object
 				#glmnet::predict.coxnet(z@fit, newx=as.matrix(x.expand(z@x)), s=z@optimum["Lambda"])
-				glmnet::predict.glmnet(z@fit, newx=as.matrix(x.expand(z@x)), s=z@optimum["Lambda"])
+				#glmnet::predict.glmnet(z@fit, newx=as.matrix(x.expand(z@x)), s=z@optimum["Lambda"])
+				print("test2a")
+				predict(z@fit, newx=as.matrix(x.expand(z@x)), s=z@optimum["Lambda"])
+				print("test2b")
 			})		
 		}
 		# Transforming ensemble prediction lists to matrices

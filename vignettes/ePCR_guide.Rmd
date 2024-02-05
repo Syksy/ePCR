@@ -168,7 +168,7 @@ xtest <- rbind(xMEDISIMU[testset,], xTEXTSIMU[testset,])
 ytest <- rbind(yMEDISIMU[testset,], yTEXTSIMU[testset,])
 # Perform survival prediction based on the PEP-ensemble we've created
 xpred <- predict(pep_tyks, newx=as.matrix(xtest), type="ensemble")
-# Construct a survival object using the Surv-package
+# Construct a survival object using the Surv-class
 ytrue <- Surv(time = ytest[,"surv"][,"time"], event = ytest[,"surv"][,"status"])
 # Test c-index between our constructed ensemble prediction and true response
 tyksscore <- score.cindex(pred = xpred, real = ytrue)
