@@ -348,15 +348,10 @@ setMethod("predict", "PSP",
 				if(verb>-1) cat("--- Missing entries detected in newx, running defined imputation function ---\n\n")
 				newx <- impute::impute.knn(newx)$data
 			}
-			# predict.coxnet is now hidden function inside glmnet
-			#glmnet::predict.coxnet(object@fit, newx=as.matrix(object@x.expand(newx)), type=type, s=object@optimum["Lambda"])
-			#glmnet::predict.glmnet(object@fit, newx=as.matrix(object@x.expand(newx)), type=type, s=object@optimum["Lambda"])
-			#glmnet:::predict.coxnet(object@fit, newx=as.matrix(object@x.expand(newx)), type=type, s=object@optimum["Lambda"])
+			# Novel data prediction
 			predict(object@fit, newx=as.matrix(object@x.expand(newx)), type=type, s=object@optimum["Lambda"])
 		}else{
-			#glmnet::predict.coxnet(object@fit, newx=as.matrix(object@x.expand(object@x)), type=type, s=object@optimum["Lambda"])
-			#glmnet::predict.glmnet(object@fit, newx=as.matrix(object@x.expand(object@x)), type=type, s=object@optimum["Lambda"])
-			#glmnet:::predict.coxnet(object@fit, newx=as.matrix(object@x.expand(object@x)), type=type, s=object@optimum["Lambda"])
+			# Demonstrate using the data matrix in stored in ePCR object
 			predict(object@fit, newx=as.matrix(object@x.expand(object@x)), type=type, s=object@optimum["Lambda"])
 		}
 	}
