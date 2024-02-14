@@ -11,7 +11,7 @@ vignette: >
 
 `ePCR` is an R-package intended for the survival analysis of advanced prostate cancer. This document is a basic introduction to the functionality of `ePCR` and a general overview to the possible analysis workflows for clinical trial or hospital registry cohorts. The approach leverages ensemble-driven usage of single Cox regression based regression models named _ePCR_, which was the top performing approach in the DREAM 9.5 Prostate Cancer Challenge (Guinney et al, 2017).
 
-The latest version of `ePCR` is available in the Comprehensive R Archive Network (CRAN, http://cran.r-project.org/). CRAN mirrors are by default available in the installation of R, and the `ePCR` package is installable using the R terminal command: `install.packages("ePCR")`. This should prompt the user to select a nearby CRAN mirror, after which the installation of `ePCR` and its dependencies are automatically performed. After the `install.packages`-call, the `ePCR` package can be loaded with either command `library("ePCR")`.
+The latest version of `ePCR` is available in the Comprehensive R Archive Network [CRAN](https://cran.r-project.org/package=ePCR). CRAN mirrors are by default available in the installation of R, and the `ePCR` package is installable using the R terminal command: `install.packages("ePCR")`. This should prompt the user to select a nearby CRAN mirror, after which the installation of `ePCR` and its dependencies are automatically performed. After the `install.packages`-call, the `ePCR` package can be loaded with either command `library("ePCR")`.
 
 The following notation is used in the document: R commands, package names and function names are written in `typewriter font`. The notation of format `pckgName::funcName` indicates that the function `funcName` is called from the package `pckgName`, which is prominently used in the underlying R code due to package namespaces. This document as well as other useful PDFs can be inspected using the `browseVignettes` function for any package in R.
 
@@ -72,7 +72,7 @@ psp_medi <- new("PSP",
  	# Using the concordance-index as prediction accuracy in CV
  	score = score.cindex,
  	# Alpha sequence
- 	alphaseq = seq(from=0, to=1, length.out=51),
+ 	alphaseq = seq(from=0, to=1, length.out=11),
  	# Using glmnet's default nlambda of 100
  	nlambda = 100,
  	# Running the nominal 10-fold cross-validation
@@ -96,7 +96,7 @@ psp_text <- new("PSP",
  	seeds = c(3,4),
  	cvrepeat = 2,
  	score = score.cindex,
- 	alphaseq = seq(from=0, to=1, length.out=51),
+ 	alphaseq = seq(from=0, to=1, length.out=11),
  	nlambda = 100,
  	folds = 10,
  	x.expand = function(x) { as.matrix(x) }
@@ -180,8 +180,7 @@ print(paste("TYKS example c-index:", round(tyksscore, 4)))
 
 The `ePCR` R-package comes with readily fitted `ePCR`-ensembles from the work by (Guinney, Wang, Laajala et al. 2017) as well as from hospital registry cohorts. Due to data confidentiality issues, the original data matrices or responses are not provided in the S4-objects (although normally they would be in the slots `@x` and `@y`, respectively). 
 
-In order to gain access to the original data by Guinney et al., the processed data can be accessed as raw `.csv` files or R workspaces at: 
-https://www.synapse.org/\#!Synapse:syn4227610/files/
+In order to gain access to the original data by Guinney et al., the processed data can be accessed as raw `.csv` files or R workspaces at the corresponding [Synapse workspace](https://www.synapse.org//#!Synapse:syn4227610/files/).
 
 Accessing the Turku University Hospital registry cohort requires a research permit and users are encouraged to contact the Center for Clinical Informatics (Arho.Virkki@tyks.fi) for further information.
 
