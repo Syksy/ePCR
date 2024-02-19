@@ -72,7 +72,7 @@ psp_medi <- new("PSP",
  	# Using the concordance-index as prediction accuracy in CV
  	score = score.cindex,
  	# Alpha sequence
- 	alphaseq = seq(from=0, to=1, length.out=11),
+ 	alphaseq = seq(from=0, to=1, length.out=6),
  	# Using glmnet's default nlambda of 100
  	nlambda = 100,
  	# Running the nominal 10-fold cross-validation
@@ -96,7 +96,7 @@ psp_text <- new("PSP",
  	seeds = c(3,4),
  	cvrepeat = 2,
  	score = score.cindex,
- 	alphaseq = seq(from=0, to=1, length.out=11),
+ 	alphaseq = seq(from=0, to=1, length.out=6),
  	nlambda = 100,
  	folds = 10,
  	x.expand = function(x) { as.matrix(x) }
